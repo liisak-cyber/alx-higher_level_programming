@@ -1,5 +1,6 @@
 -- Creates the table id_not_null
-CREATESS TABLE IF NOT EXISTS `id_not_null` (
-	`id`	INT
-	`name`	VARCHAR(256)
+CREATE TABLE IF NOT EXISTS `id_not_null` (
+    `id` INT NOT NULL,
+    `name` VARCHAR(256)
 );
+
