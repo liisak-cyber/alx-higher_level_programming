@@ -1,5 +1,5 @@
 import MySQLdb
-
+/
 # Replace these variables with your actual credentials
 host = "localhost"
 username = "root@localhost"
