@@ -1,18 +1,15 @@
+# 6-model_state.py
 #!/usr/bin/python3
 """
-Contains the class definition of a City
+Creates the states table in the database
 """
-from model_state import Base
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
+import sys
+from model_state import Base, State
+from sqlalchemy import create_engine
 
+if __name__ == "__main__":
+        # Connect to MySQL
+            engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
-class City(Base):
-    """
-    Class that defines each city
-    """
-    __tablename__ = 'cities'
-
-    id = Column(Integer, unique=True, nullable=False, primary_key=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
+                # Create all tables
+                    Base.metadata.create_all(engine)
